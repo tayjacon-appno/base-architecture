@@ -1,0 +1,27 @@
+{
+  "name": "playwright-prod-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-ready Playwright template for visual regression and performance metrics.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:visual": "playwright test --grep @visual",
+    "test:perf": "playwright test --grep @perf",
+    "test:visual:update": "playwright test --grep @visual --update-snapshots",
+    "baseline:update": "tsx scripts/baseline.ts update",
+    "baseline:list": "tsx scripts/baseline.ts list",
+    "baseline:clean": "tsx scripts/baseline.ts clean",
+    "report:perf": "tsx scripts/baseline.ts export-perf",
+    "compare:perf": "tsx scripts/compare-performance.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^24.0.0",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.8.3"
+  }
+}
